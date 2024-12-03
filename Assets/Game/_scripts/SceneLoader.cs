@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using Unity.VisualScripting;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -10,6 +9,8 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private GameObject _gameType;
     [SerializeField] private GameObject _levels;
     [SerializeField] private GameObject _options;
+    [SerializeField] private GameObject _saveOptions;
+    [SerializeField] private GameObject _backOptions;
     [SerializeField] private GameObject _shop;
     [SerializeField] private GameObject _firstEnter;
 
@@ -144,5 +145,7 @@ public class SceneLoader : MonoBehaviour
         // Убедимся, что альфа полностью прозрачная
         color.a = 0;
         fadeImage.color = color;
+        _saveOptions.SetActive(false);
+        _backOptions.SetActive(true);
     }
 }

@@ -5,7 +5,9 @@ public class FirstEnter : MonoBehaviour
 {
     [SerializeField] private GameObject _firstEnterPanel;
     [SerializeField] private Button _accelerometer;
+    [SerializeField] private Button _accelerometerOptions;
     [SerializeField] private Button _swipes;
+    [SerializeField] private Button _swipesOptions;
     [SerializeField] private GameObject _save;
     private int _controlType;
 
@@ -25,7 +27,9 @@ public class FirstEnter : MonoBehaviour
     private void ChooseAccelerometer()
     {
         _swipes.transform.GetChild(0).gameObject.SetActive(false);
+        _swipesOptions.transform.GetChild(0).gameObject.SetActive(false);
         _accelerometer.transform.GetChild(0).gameObject.SetActive(true);
+        _accelerometerOptions.transform.GetChild(0).gameObject.SetActive(true);
         _save.SetActive(true);
         _controlType = 0;
         PlayerPrefs.SetInt("ControlType", _controlType);
@@ -34,7 +38,9 @@ public class FirstEnter : MonoBehaviour
     private void ChooseSwipes()
     {
         _accelerometer.transform.GetChild(0).gameObject.SetActive(false);
+        _accelerometerOptions.transform.GetChild(0).gameObject.SetActive(false);
         _swipes.transform.GetChild(0).gameObject.SetActive(true);
+        _swipesOptions.transform.GetChild(0).gameObject.SetActive(true);
         _save.SetActive(true);
         _controlType = 1;
         PlayerPrefs.SetInt("ControlType", _controlType);
