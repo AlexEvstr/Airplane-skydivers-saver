@@ -7316,6 +7316,7 @@ GameObject:
   - component: {fileID: 1459048324}
   - component: {fileID: 1459048325}
   - component: {fileID: 1459048326}
+  - component: {fileID: 1459048327}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -7373,6 +7374,31 @@ MonoBehaviour:
   _shop: {fileID: 1365470248}
   _firstEnter: {fileID: 20274971}
   fadeImage: {fileID: 1153396243}
+--- !u!114 &1459048327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459048322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f63a9a8f6014bebbc535a07c25be14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalLevels: 8
+  levelButtons:
+  - {fileID: 1766647064}
+  - {fileID: 2081965257}
+  - {fileID: 333859708}
+  - {fileID: 1884706432}
+  - {fileID: 1367584229}
+  - {fileID: 1443549432}
+  - {fileID: 832629657}
+  - {fileID: 622425028}
+  gameSceneName: company
+  fadeImage: {fileID: 1153396243}
+  fadeDuration: 0.5
 --- !u!1 &1526088264
 GameObject:
   m_ObjectHideFlags: 0
