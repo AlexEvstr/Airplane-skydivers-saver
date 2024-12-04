@@ -17,6 +17,9 @@ public class PlaneController : MonoBehaviour
     private bool controlsDisabled = false;  // Флаг отключения управления
     private bool invertedControls = false;  // Флаг инверсии управления
 
+    private Transform lightningEffect;      // Дочерний объект для молнии
+    private Transform hurricaneEffect;      // Дочерний объект для урагана
+
     private void Start()
     {
         // Получаем тип управления из PlayerPrefs
@@ -27,6 +30,14 @@ public class PlaneController : MonoBehaviour
         Vector3 screenRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
         screenLeftLimit = screenLeft.x;
         screenRightLimit = screenRight.x;
+
+        // Получаем ссылки на дочерние объекты эффектов
+        lightningEffect = transform.GetChild(0);
+        hurricaneEffect = transform.GetChild(1);
+
+        // Убеждаемся, что эффекты отключены при старте
+        lightningEffect.gameObject.SetActive(false);
+        hurricaneEffect.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -94,7 +105,7 @@ public class PlaneController : MonoBehaviour
         }
     }
 
-    // Отключение управления на определенное время
+    // Отключение управления на определенное время с визуальным эффектом
     public void DisableControls(float duration)
     {
         StartCoroutine(DisableControlsCoroutine(duration));
@@ -103,11 +114,19 @@ public class PlaneController : MonoBehaviour
     private IEnumerator DisableControlsCoroutine(float duration)
     {
         controlsDisabled = true;
+
+        // Включаем эффект молнии
+        lightningEffect.gameObject.SetActive(true);
+
         yield return new WaitForSeconds(duration);
+
+        // Выключаем эффект молнии
+        lightningEffect.gameObject.SetActive(false);
+
         controlsDisabled = false;
     }
 
-    // Инверсия управления на определенное время
+    // Инверсия управления на определенное время с визуальным эффектом
     public void InvertControls(float duration)
     {
         StartCoroutine(InvertControlsCoroutine(duration));
@@ -116,7 +135,15 @@ public class PlaneController : MonoBehaviour
     private IEnumerator InvertControlsCoroutine(float duration)
     {
         invertedControls = true;
+
+        // Включаем эффект урагана
+        hurricaneEffect.gameObject.SetActive(true);
+
         yield return new WaitForSeconds(duration);
+
+        // Выключаем эффект урагана
+        hurricaneEffect.gameObject.SetActive(false);
+
         invertedControls = false;
     }
 }

@@ -15,7 +15,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private GameObject _firstEnter;
 
     [SerializeField] private Image fadeImage;
-    private float fadeDuration = 0.5f;
+    private float fadeDuration = 0.25f;
 
     private void Start()
     {
