@@ -145,4 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallSpeed: 2
   isRare: 1
-  sparkleEffect: {fileID: 0}
+  sparkleEffect: {fileID: 8357645808136202670, guid: d3fa1e3f2797d42ddb6ed7567468ded5, type: 3}
