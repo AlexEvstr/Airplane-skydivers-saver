@@ -25,7 +25,8 @@ public class Parachutist : MonoBehaviour
             // Добавляем монеты
             int coinsToAdd = isRare ? 5 : 1;
             GameManager.Instance.AddCoins(coinsToAdd);
-
+            PlaneController planeController = collision.GetComponent<PlaneController>();
+            planeController.ShowParachuteEffect(isRare);
             // Увеличиваем счетчик спасенных парашютистов
             GameManager.Instance.IncreaseRescueCount();
 

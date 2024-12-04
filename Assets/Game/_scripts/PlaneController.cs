@@ -18,10 +18,19 @@ public class PlaneController : MonoBehaviour
     private bool invertedControls = false;  // Флаг инверсии управления
 
     private Transform lightningEffect;      // Дочерний объект для молнии
-    private Transform hurricaneEffect;      // Дочерний объект для урагана
+    private Transform hurricaneEffect;
+
+    private Transform normalParachuteEffect;
+    private Transform rareParachuteEffect;
 
     private void Start()
     {
+        normalParachuteEffect = transform.GetChild(2);
+        rareParachuteEffect = transform.GetChild(3);
+
+        // Выключаем эффекты при старте
+        normalParachuteEffect.gameObject.SetActive(false);
+        rareParachuteEffect.gameObject.SetActive(false);
         // Получаем тип управления из PlayerPrefs
         controlType = PlayerPrefs.GetInt("ControlType", 0);
 
@@ -146,4 +155,24 @@ public class PlaneController : MonoBehaviour
 
         invertedControls = false;
     }
+
+    public void ShowParachuteEffect(bool isRare)
+    {
+        StartCoroutine(ShowParachuteEffectCoroutine(isRare));
+    }
+
+    private IEnumerator ShowParachuteEffectCoroutine(bool isRare)
+    {
+        Transform effect = isRare ? rareParachuteEffect : normalParachuteEffect;
+
+        // Включаем эффект
+        effect.gameObject.SetActive(true);
+
+        // Ждем одну секунду
+        yield return new WaitForSeconds(1f);
+
+        // Выключаем эффект
+        effect.gameObject.SetActive(false);
+    }
+
 }
