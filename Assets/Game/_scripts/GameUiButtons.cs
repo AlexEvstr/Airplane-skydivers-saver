@@ -7,23 +7,39 @@ using UnityEngine.UI;
 public class GameUiButtons : MonoBehaviour
 {
     [SerializeField] private Image fadeImage;
+    [SerializeField] private GameObject _pause;
     private float fadeDuration = 0.5f;
 
     private void Start()
     {
+        Time.timeScale = 1;
         Color color = fadeImage.color;
         color.a = 1;
         fadeImage.color = color;
         StartCoroutine(FadeIn());
     }
 
+    public void OpenPause()
+    {
+        _pause.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void ClosePause()
+    {
+        _pause.SetActive(false);
+        Time.timeScale = 1;
+    }
+
     public void LoadSceneWithFade(string sceneName)
     {
+        Time.timeScale = 1;
         StartCoroutine(FadeOutAndLoadScene(sceneName));
     }
 
     private IEnumerator FadeIn()
     {
+        Time.timeScale = 1;
         yield return new WaitForSeconds(0.25f);
         Color color = fadeImage.color;
         color.a = 1;

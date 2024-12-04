@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         // Получаем текущий уровень из PlayerPrefs или устанавливаем 1 уровень по умолчанию
         currentLevel = PlayerPrefs.GetInt("BestLevel", 1);
 

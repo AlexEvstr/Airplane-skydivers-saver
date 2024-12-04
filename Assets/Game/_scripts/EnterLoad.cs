@@ -6,6 +6,7 @@ public class EnterLoad : MonoBehaviour
 {
     private void Start()
     {
+        Time.timeScale = 1;
         StartCoroutine(WaitAndLoadGame());
     }
 
