@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         // Получаем текущий уровень из PlayerPrefs или устанавливаем 1 уровень по умолчанию
-        currentLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
+        currentLevel = PlayerPrefs.GetInt("BestLevel", 1);
 
         // Настраиваем кнопки уровней
         SetupLevelButtons();
