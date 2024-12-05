@@ -29,7 +29,17 @@ public class NormalObstacle : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             // Уничтожение самолета
-            StartCoroutine(OpenGameOver());
+            //StartCoroutine(OpenGameOver());
+
+            gameAudio.LoseSound();
+            if (SceneManager.GetActiveScene().name == "company")
+            {
+                GameManager.Instance.GameOver();
+            }
+            else
+            {
+                EndlessGameManager.Instance.GameOver();
+            }
 
             // Показываем эффект взрыва
             if (SceneManager.GetActiveScene().name == "company")

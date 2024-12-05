@@ -326,6 +326,7 @@ MonoBehaviour:
   speed: 5
   swipeSensitivity: 1
   accelerometerSensitivity: 2
+  _gameOver: {fileID: 1197342176}
 --- !u!212 &31027282
 SpriteRenderer:
   m_ObjectHideFlags: 0

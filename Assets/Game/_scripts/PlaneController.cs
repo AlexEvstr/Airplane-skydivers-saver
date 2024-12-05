@@ -23,6 +23,8 @@ public class PlaneController : MonoBehaviour
     private Transform normalParachuteEffect;
     private Transform rareParachuteEffect;
 
+    [SerializeField] private GameObject _gameOver;
+
     private void Start()
     {
         normalParachuteEffect = transform.GetChild(2);
@@ -174,5 +176,10 @@ public class PlaneController : MonoBehaviour
         // Выключаем эффект
         effect.gameObject.SetActive(false);
     }
+
+    //private void OnDisable()
+    //{
+    //    _gameOver.SetActive(true);
+    //}
 
 }

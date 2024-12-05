@@ -165,7 +165,7 @@ public class EndlessGameManager : MonoBehaviour
     {
         if (playerPlane != null)
         {
-            playerPlane.SetActive(false);
+            playerPlane.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 }
