@@ -129,7 +129,7 @@ public class SceneLoader : MonoBehaviour
     private IEnumerator FadeOutSwitchFadeIn(GameObject objectToDisable, GameObject objectToEnable)
     {
         Color color = fadeImage.color;
-        color.a = 0; // Начальная альфа прозрачна
+        color.a = 0;
         fadeImage.color = color;
 
         while (fadeImage.color.a < 1)
@@ -139,13 +139,11 @@ public class SceneLoader : MonoBehaviour
             yield return null;
         }
 
-        // Отключаем и включаем объекты
         if (objectToDisable != null)
             objectToDisable.SetActive(false);
         if (objectToEnable != null)
             objectToEnable.SetActive(true);
 
-        // Возвращение к прозрачности
         while (fadeImage.color.a > 0)
         {
             color.a -= Time.deltaTime / fadeDuration;
@@ -153,7 +151,6 @@ public class SceneLoader : MonoBehaviour
             yield return null;
         }
 
-        // Убедимся, что альфа полностью прозрачная
         color.a = 0;
         fadeImage.color = color;
         _saveOptions.SetActive(false);

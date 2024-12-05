@@ -3,21 +3,21 @@ using UnityEngine;
 
 public class PlaneController : MonoBehaviour
 {
-    private float speed = 5f;                 // Скорость движения самолета
-    private float swipeSensitivity = 0.5f;     // Чувствительность свайпов
-    private float accelerometerSensitivity = 2f; // Чувствительность акселерометра
+    private float speed = 5f;
+    private float swipeSensitivity = 0.5f;
+    private float accelerometerSensitivity = 2f;
 
-    private int controlType;                // Тип управления (0 = акселерометр, 1 = свайпы)
-    private Vector3 startTouchPosition;     // Начальная позиция касания
-    private Vector3 currentPosition;        // Текущая позиция касания
+    private int controlType;
+    private Vector3 startTouchPosition;
+    private Vector3 currentPosition;
 
-    private float screenLeftLimit;          // Левая граница экрана
-    private float screenRightLimit;         // Правая граница экрана
+    private float screenLeftLimit;
+    private float screenRightLimit;
 
-    private bool controlsDisabled = false;  // Флаг отключения управления
-    private bool invertedControls = false;  // Флаг инверсии управления
+    private bool controlsDisabled = false;
+    private bool invertedControls = false;
 
-    private Transform lightningEffect;      // Дочерний объект для молнии
+    private Transform lightningEffect;
     private Transform hurricaneEffect;
 
     private Transform normalParachuteEffect;
@@ -30,42 +30,35 @@ public class PlaneController : MonoBehaviour
         normalParachuteEffect = transform.GetChild(2);
         rareParachuteEffect = transform.GetChild(3);
 
-        // Выключаем эффекты при старте
         normalParachuteEffect.gameObject.SetActive(false);
         rareParachuteEffect.gameObject.SetActive(false);
-        // Получаем тип управления из PlayerPrefs
         controlType = PlayerPrefs.GetInt("ControlType", 0);
 
-        // Вычисляем границы экрана
         Vector3 screenLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
         Vector3 screenRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
         screenLeftLimit = screenLeft.x;
         screenRightLimit = screenRight.x;
 
-        // Получаем ссылки на дочерние объекты эффектов
         lightningEffect = transform.GetChild(0);
         hurricaneEffect = transform.GetChild(1);
 
-        // Убеждаемся, что эффекты отключены при старте
         lightningEffect.gameObject.SetActive(false);
         hurricaneEffect.gameObject.SetActive(false);
     }
 
     private void Update()
     {
-        if (controlsDisabled) return; // Если управление отключено, выходим
+        if (controlsDisabled) return;
 
-        // Выбираем тип управления
         if (controlType == 0)
         {
-            HandleAccelerometer(); // Управление акселерометром
+            HandleAccelerometer();
         }
         else if (controlType == 1)
         {
-            HandleSwipes(); // Управление свайпами
+            HandleSwipes();
         }
 
-        // Ограничиваем самолет в пределах границ экрана
         transform.position = new Vector3(
             Mathf.Clamp(transform.position.x, screenLeftLimit, screenRightLimit),
             transform.position.y,
@@ -75,9 +68,8 @@ public class PlaneController : MonoBehaviour
 
     private void HandleAccelerometer()
     {
-        float tilt = Input.acceleration.x * accelerometerSensitivity; // Наклон устройства
+        float tilt = Input.acceleration.x * accelerometerSensitivity;
 
-        // Инвертируем управление, если флаг установлен
         if (invertedControls)
         {
             tilt *= -1;
@@ -90,33 +82,26 @@ public class PlaneController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            // Сохраняем начальную позицию касания
             startTouchPosition = Input.mousePosition;
         }
 
         if (Input.GetMouseButton(0))
         {
-            // Обновляем текущую позицию касания
             currentPosition = Input.mousePosition;
 
-            // Вычисляем разницу по X между началом касания и текущей позицией
             float deltaX = (currentPosition.x - startTouchPosition.x) * swipeSensitivity;
 
-            // Инвертируем управление, если флаг установлен
             if (invertedControls)
             {
                 deltaX *= -1;
             }
 
-            // Двигаем самолет
             transform.Translate(Vector3.right * deltaX * Time.deltaTime);
 
-            // Обновляем начальную позицию, чтобы движение было плавным
             startTouchPosition = currentPosition;
         }
     }
 
-    // Отключение управления на определенное время с визуальным эффектом
     public void DisableControls(float duration)
     {
         StartCoroutine(DisableControlsCoroutine(duration));
@@ -126,18 +111,15 @@ public class PlaneController : MonoBehaviour
     {
         controlsDisabled = true;
 
-        // Включаем эффект молнии
         lightningEffect.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(duration);
 
-        // Выключаем эффект молнии
         lightningEffect.gameObject.SetActive(false);
 
         controlsDisabled = false;
     }
 
-    // Инверсия управления на определенное время с визуальным эффектом
     public void InvertControls(float duration)
     {
         StartCoroutine(InvertControlsCoroutine(duration));
@@ -147,12 +129,10 @@ public class PlaneController : MonoBehaviour
     {
         invertedControls = true;
 
-        // Включаем эффект урагана
         hurricaneEffect.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(duration);
 
-        // Выключаем эффект урагана
         hurricaneEffect.gameObject.SetActive(false);
 
         invertedControls = false;
@@ -167,19 +147,10 @@ public class PlaneController : MonoBehaviour
     {
         Transform effect = isRare ? rareParachuteEffect : normalParachuteEffect;
 
-        // Включаем эффект
         effect.gameObject.SetActive(true);
 
-        // Ждем одну секунду
         yield return new WaitForSeconds(1f);
 
-        // Выключаем эффект
         effect.gameObject.SetActive(false);
     }
-
-    //private void OnDisable()
-    //{
-    //    _gameOver.SetActive(true);
-    //}
-
 }

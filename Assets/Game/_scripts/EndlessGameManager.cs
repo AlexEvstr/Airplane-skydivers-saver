@@ -1,35 +1,34 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 
 public class EndlessGameManager : MonoBehaviour
 {
-    public static EndlessGameManager Instance; // Синглтон
+    public static EndlessGameManager Instance;
 
-    public int currentLevel = 1;          // Текущий уровень
-    public int rescueTarget = 5;         // Цель спасения парашютистов
-    public int rescuedCount = 0;         // Счетчик спасенных
-    public GameObject explosionPrefab;   // Префаб взрыва
-    public GameObject parachutistPrefab; // Префаб парашютиста
-    public GameObject rareParachutistPrefab; // Префаб редкого парашютиста
-    public GameObject lightningPrefab;   // Префаб молнии
-    public GameObject hurricanePrefab;   // Префаб урагана
-    public GameObject obstaclePrefab;    // Префаб обычного препятствия
-    public Text coinsText;               // Текст монет
-    public Text rescuedText;             // Текст спасенных парашютистов
-    public GameObject gameOverScreen;    // Окно Game Over
-    public GameObject campaignCompleteScreen; // Окно завершения кампании
+    public int currentLevel = 1;
+    public int rescueTarget = 5;
+    public int rescuedCount = 0;
+    public GameObject explosionPrefab;
+    public GameObject parachutistPrefab;
+    public GameObject rareParachutistPrefab;
+    public GameObject lightningPrefab;
+    public GameObject hurricanePrefab;
+    public GameObject obstaclePrefab;
+    public Text coinsText;
+    public Text rescuedText;
+    public GameObject gameOverScreen;
+    public GameObject campaignCompleteScreen;
     public GameObject levelCompleteScreen;
     private GameAudio gameAudio;
 
     public GameObject playerPlane;
 
-    private int coins;                   // Количество монет
+    private int coins;
 
-    public float parachutistSpawnInterval = 3f; // Интервал спавна парашютистов
-    public float obstacleSpawnInterval = 5f;   // Интервал спавна препятствий
-    public float normalObstacleSpawnInterval = 7f; // Интервал спавна обычных препятствий
+    public float parachutistSpawnInterval = 3f;
+    public float obstacleSpawnInterval = 5f;
+    public float normalObstacleSpawnInterval = 7f;
 
     private void Awake()
     {
@@ -46,13 +45,11 @@ public class EndlessGameManager : MonoBehaviour
     private void Start()
     {
         gameAudio = GetComponent<GameAudio>();
-        // Загружаем текущий уровень и монеты из PlayerPrefs
         currentLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
         coins = PlayerPrefs.GetInt("Coins", 0);
 
         UpdateUI();
 
-        // Начинаем спавн парашютистов и препятствий
         StartCoroutine(SpawnParachutists());
         StartCoroutine(SpawnObstacles());
         StartCoroutine(SpawnNormalObstacles());
@@ -71,24 +68,6 @@ public class EndlessGameManager : MonoBehaviour
     {
         rescuedCount++;
         UpdateUI();
-
-        // Проверяем, выполнена ли цель
-        
-    }
-
-    private void LevelComplete()
-    {
-        currentLevel++;
-        PlayerPrefs.SetInt("CurrentLevel", currentLevel);
-        int bestLevel = PlayerPrefs.GetInt("BestLevel", currentLevel);
-        if (bestLevel <= currentLevel)
-        {
-            bestLevel = currentLevel;
-            PlayerPrefs.SetInt("BestLevel", bestLevel);
-        }
-        PlayerPrefs.Save(); // Убедимся, что данные сохраняются
-        levelCompleteScreen.SetActive(true); // Показываем экран завершения уровня
-        gameAudio.WinSound();
     }
 
     public void GameOver()
@@ -110,13 +89,11 @@ public class EndlessGameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(parachutistSpawnInterval);
 
-            // Рандомное определение обычного или редкого парашютиста
             GameObject parachutistPrefabToSpawn = Random.value > 0.8f ? rareParachutistPrefab : parachutistPrefab;
 
-            // Спавн парашютиста
             Vector3 spawnPosition = new Vector3(
-                Random.Range(-2f, 2f), // Рандомное X в пределах экрана
-                Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0)).y + 1, // Над экраном
+                Random.Range(-2f, 2f),
+                Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0)).y + 1,
                 0
             );
 
@@ -130,13 +107,11 @@ public class EndlessGameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(obstacleSpawnInterval);
 
-            // Случайный выбор препятствия
             GameObject obstaclePrefab = Random.value > 0.5f ? lightningPrefab : hurricanePrefab;
 
-            // Спавн препятствия
             Vector3 spawnPosition = new Vector3(
-                Random.Range(-2f, 2f), // Рандомное X в пределах экрана
-                Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0)).y + 1, // Над экраном
+                Random.Range(-2f, 2f),
+                Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0)).y + 1,
                 0
             );
 
@@ -150,10 +125,9 @@ public class EndlessGameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(normalObstacleSpawnInterval);
 
-            // Спавн обычного препятствия
             Vector3 spawnPosition = new Vector3(
-                Random.Range(-2f, 2f), // Рандомное X в пределах экрана
-                Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0)).y + 1, // Над экраном
+                Random.Range(-2f, 2f),
+                Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0)).y + 1,
                 0
             );
 

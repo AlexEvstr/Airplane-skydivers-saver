@@ -5,21 +5,19 @@ using System.Collections;
 
 public class LevelManager : MonoBehaviour
 {
-    public int totalLevels = 8;                 // Общее количество уровней
-    public Button[] levelButtons;              // Кнопки для уровней
-    public string gameSceneName = "GameScene"; // Название сцены с игрой
-    public Image fadeImage;                    // Для затемнения
-    public float fadeDuration = 1f;            // Длительность затухания
+    public int totalLevels = 8;
+    public Button[] levelButtons;
+    public string gameSceneName = "GameScene";
+    public Image fadeImage;
+    public float fadeDuration = 1f;
 
-    private int currentLevel;                  // Текущий уровень
+    private int currentLevel;
 
     private void Start()
     {
         Time.timeScale = 1;
-        // Получаем текущий уровень из PlayerPrefs или устанавливаем 1 уровень по умолчанию
         currentLevel = PlayerPrefs.GetInt("BestLevel", 1);
 
-        // Настраиваем кнопки уровней
         SetupLevelButtons();
     }
 
@@ -31,22 +29,19 @@ public class LevelManager : MonoBehaviour
 
             if (i + 1 <= currentLevel)
             {
-                // Уровень доступен: замок отключен, кнопка активна
-                Transform lockIcon = button.transform.GetChild(0); // Замок - нулевой дочерний объект
+                Transform lockIcon = button.transform.GetChild(0);
                 if (lockIcon != null)
                 {
                     lockIcon.gameObject.SetActive(false);
                 }
                 button.interactable = true;
 
-                // Привязываем событие к кнопке
-                int levelToLoad = i + 1; // Захватываем локальную переменную для лямбда-функции
+                int levelToLoad = i + 1;
                 button.onClick.AddListener(() => LoadLevel(levelToLoad));
             }
             else
             {
-                // Уровень недоступен: замок включен, кнопка неактивна
-                Transform lockIcon = button.transform.GetChild(0); // Замок - нулевой дочерний объект
+                Transform lockIcon = button.transform.GetChild(0);
                 if (lockIcon != null)
                 {
                     lockIcon.gameObject.SetActive(true);
@@ -63,12 +58,10 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator FadeOutAndLoadLevel(int level)
     {
-        // Сохраняем текущий уровень
         PlayerPrefs.SetInt("CurrentLevel", level);
 
-        // Затухание
         Color color = fadeImage.color;
-        color.a = 0; // Начальная альфа прозрачна
+        color.a = 0;
         fadeImage.color = color;
 
         while (fadeImage.color.a < 1)
@@ -78,7 +71,6 @@ public class LevelManager : MonoBehaviour
             yield return null;
         }
 
-        // Загружаем сцену с игрой
         SceneManager.LoadScene(gameSceneName);
     }
 }

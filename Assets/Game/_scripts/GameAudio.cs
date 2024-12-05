@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameAudio : MonoBehaviour
@@ -17,11 +15,10 @@ public class GameAudio : MonoBehaviour
 
     private void Start()
     {
-        bool isMusicOn = PlayerPrefs.GetInt("MusicEnabled", 1) == 1; // По умолчанию включено
+        bool isMusicOn = PlayerPrefs.GetInt("MusicEnabled", 1) == 1;
         musicSource.volume = isMusicOn ? 1 : 0;
 
-        // Звуки
-        bool isSoundOn = PlayerPrefs.GetInt("SoundEnabled", 1) == 1; // По умолчанию включено
+        bool isSoundOn = PlayerPrefs.GetInt("SoundEnabled", 1) == 1;
         soundEffectsSource.volume = isSoundOn ? 1 : 0;
     }
 

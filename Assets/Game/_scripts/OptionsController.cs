@@ -1,20 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class OptionsController : MonoBehaviour
 {
-    public AudioSource musicSource;           // AudioSource для музыки
-    public AudioSource soundEffectsSource;    // AudioSource для звуков
+    public AudioSource musicSource;
+    public AudioSource soundEffectsSource;
 
-    // Объекты для переключения музыки
-    public GameObject musicOnObject;          // Включенная музыка
-    public GameObject musicOffObject;         // Выключенная музыка
+    public GameObject musicOnObject;
+    public GameObject musicOffObject;
 
-    // Объекты для переключения звуков
-    public GameObject soundOnObject;          // Включенные звуки
-    public GameObject soundOffObject;         // Выключенные звуки
+    public GameObject soundOnObject;
+    public GameObject soundOffObject;
 
     [SerializeField] private Button _accelerometer;
     [SerializeField] private Button _swipes;
@@ -42,72 +38,52 @@ public class OptionsController : MonoBehaviour
         InitializeAudioState();
     }
 
-    /// <summary>
-    /// Переключение состояния музыки
-    /// </summary>
     public void ToggleMusic()
     {
         _save.gameObject.SetActive(true);
         _back.SetActive(false);
         bool isMusicOn = musicSource.volume > 0;
 
-        // Переключаем громкость музыки
         musicSource.volume = isMusicOn ? 0 : 1;
 
-        // Обновляем UI
         UpdateUI(!isMusicOn, true);
     }
 
-    /// <summary>
-    /// Переключение состояния звуков
-    /// </summary>
     public void ToggleSoundEffects()
     {
         _save.gameObject.SetActive(true);
         _back.SetActive(false);
         bool isSoundOn = soundEffectsSource.volume > 0;
 
-        // Переключаем громкость звуков
         soundEffectsSource.volume = isSoundOn ? 0 : 1;
 
-        // Обновляем UI
         UpdateUI(!isSoundOn, false);
     }
 
-    /// <summary>
-    /// Инициализация состояния звука и UI при старте
-    /// </summary>
     private void InitializeAudioState()
     {
-        // Музыка
-        bool isMusicOn = PlayerPrefs.GetInt("MusicEnabled", 1) == 1; // По умолчанию включено
+        bool isMusicOn = PlayerPrefs.GetInt("MusicEnabled", 1) == 1;
         musicSource.volume = isMusicOn ? 1 : 0;
         UpdateUI(isMusicOn, true);
 
-        // Звуки
-        bool isSoundOn = PlayerPrefs.GetInt("SoundEnabled", 1) == 1; // По умолчанию включено
+        bool isSoundOn = PlayerPrefs.GetInt("SoundEnabled", 1) == 1;
         soundEffectsSource.volume = isSoundOn ? 1 : 0;
         UpdateUI(isSoundOn, false);
     }
 
-    /// <summary>
-    /// Обновление UI объектов для музыки и звуков
-    /// </summary>
-    /// <param name="state">Состояние (включено/выключено)</param>
-    /// <param name="isMusic">Если true — обновляем музыку, иначе — звуки</param>
     private void UpdateUI(bool state, bool isMusic)
     {
         if (isMusic)
         {
             musicOnObject.SetActive(state);
             musicOffObject.SetActive(!state);
-            PlayerPrefs.SetInt("MusicEnabled", state ? 1 : 0); // Сохраняем состояние музыки
+            PlayerPrefs.SetInt("MusicEnabled", state ? 1 : 0);
         }
         else
         {
             soundOnObject.SetActive(state);
             soundOffObject.SetActive(!state);
-            PlayerPrefs.SetInt("SoundEnabled", state ? 1 : 0); // Сохраняем состояние звуков
+            PlayerPrefs.SetInt("SoundEnabled", state ? 1 : 0); 
         }
     }
 
