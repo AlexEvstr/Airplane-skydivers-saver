@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NormalObstacle : MonoBehaviour
 {
@@ -31,7 +32,15 @@ public class NormalObstacle : MonoBehaviour
             StartCoroutine(OpenGameOver());
 
             // Показываем эффект взрыва
-            GameObject explosion = Instantiate(GameManager.Instance.explosionPrefab, collision.transform.position, Quaternion.identity);
+            if (SceneManager.GetActiveScene().name == "company")
+            {
+                GameObject explosion = Instantiate(GameManager.Instance.explosionPrefab, collision.transform.position, Quaternion.identity);
+            }
+            else
+            {
+                GameObject explosion = Instantiate(EndlessGameManager.Instance.explosionPrefab, collision.transform.position, Quaternion.identity);
+            }
+            
             //Destroy(collision.gameObject); // Удаляем самолет
             gameAudio.ExplosionSound();
         }
@@ -41,6 +50,14 @@ public class NormalObstacle : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         gameAudio.LoseSound();
-        GameManager.Instance.GameOver();
+        if (SceneManager.GetActiveScene().name == "company")
+        {
+            GameManager.Instance.GameOver();
+        }
+        else
+        {
+            EndlessGameManager.Instance.GameOver();
+        }
+        
     }
 }

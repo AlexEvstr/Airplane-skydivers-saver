@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Parachutist : MonoBehaviour
 {
@@ -22,13 +23,25 @@ public class Parachutist : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            // Добавляем монеты
-            int coinsToAdd = isRare ? 5 : 1;
-            GameManager.Instance.AddCoins(coinsToAdd);
-            PlaneController planeController = collision.GetComponent<PlaneController>();
-            planeController.ShowParachuteEffect(isRare);
-            // Увеличиваем счетчик спасенных парашютистов
-            GameManager.Instance.IncreaseRescueCount();
+            if (SceneManager.GetActiveScene().name == "company")
+            {
+                int coinsToAdd = isRare ? 5 : 1;
+                GameManager.Instance.AddCoins(coinsToAdd);
+                PlaneController planeController = collision.GetComponent<PlaneController>();
+                planeController.ShowParachuteEffect(isRare);
+                // Увеличиваем счетчик спасенных парашютистов
+                GameManager.Instance.IncreaseRescueCount();
+            }
+            else
+            {
+                int coinsToAdd = isRare ? 5 : 1;
+                EndlessGameManager.Instance.AddCoins(coinsToAdd);
+                PlaneController planeController = collision.GetComponent<PlaneController>();
+                planeController.ShowParachuteEffect(isRare);
+                // Увеличиваем счетчик спасенных парашютистов
+                EndlessGameManager.Instance.IncreaseRescueCount();
+            }
+            
 
             // Показываем эффект блесток
             if (sparkleEffect)
