@@ -13,6 +13,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private GameObject _backOptions;
     [SerializeField] private GameObject _shop;
     [SerializeField] private GameObject _firstEnter;
+    [SerializeField] private GameObject _rulesWindow;
 
     [SerializeField] private Image fadeImage;
     private float fadeDuration = 0.25f;
@@ -106,8 +107,18 @@ public class SceneLoader : MonoBehaviour
 
     public void CloseFirstEnter()
     {
-        FadeSwitchObjectss(_firstEnter, _menu);
+        FadeSwitchObjectss(_firstEnter, _rulesWindow);
         PlayerPrefs.SetString("isChoosenControl", "yes");
+    }
+
+    public void OpenMenuFromRules()
+    {
+        FadeSwitchObjectss(_rulesWindow, _menu);
+    }
+
+    public void OpenRulesFromMenu()
+    {
+        FadeSwitchObjectss(_menu, _rulesWindow);
     }
 
     private void FadeSwitchObjectss(GameObject objectToDisable, GameObject objectToEnable)

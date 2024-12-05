@@ -61,6 +61,12 @@ public class SkillUpgradeShop : MonoBehaviour
             button.transform.GetChild(0).gameObject.SetActive(false); // Отключаем индикаторы
             button.transform.GetChild(1).gameObject.SetActive(false);
         }
+
+        if (skillLevel >= maxSkillLevel)
+        {
+            button.interactable = false;
+            button.transform.GetChild(1).gameObject.SetActive(true); // Включаем индикатор "максимум"
+        }
     }
 
     public void UpgradeControllability()
@@ -96,16 +102,18 @@ public class SkillUpgradeShop : MonoBehaviour
             UpdateCoinsText();
 
             // Проверяем, достигнут ли максимальный уровень
-            if (skillLevel >= maxSkillLevel)
-            {
-                button.interactable = false;
-                button.transform.GetChild(1).gameObject.SetActive(true); // Включаем индикатор "максимум"
-            }
+            
         }
 
         // Проверяем состояние кнопок для всех скиллов
         SetupSkillBar(controllabilityBar, "ControllabilityLevel", controllabilityButton, controllabilityCost);
         SetupSkillBar(immunityBar, "ImmunityLevel", immunityButton, immunityCost);
+
+        if (skillLevel >= maxSkillLevel)
+        {
+            button.interactable = false;
+            button.transform.GetChild(1).gameObject.SetActive(true); // Включаем индикатор "максимум"
+        }
     }
 
     private void UpdateBar(GameObject bar, int skillLevel)
