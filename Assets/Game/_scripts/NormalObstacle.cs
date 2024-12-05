@@ -55,19 +55,4 @@ public class NormalObstacle : MonoBehaviour
             gameAudio.ExplosionSound();
         }
     }
-
-    private IEnumerator OpenGameOver()
-    {
-        yield return new WaitForSeconds(0.5f);
-        gameAudio.LoseSound();
-        if (SceneManager.GetActiveScene().name == "company")
-        {
-            GameManager.Instance.GameOver();
-        }
-        else
-        {
-            EndlessGameManager.Instance.GameOver();
-        }
-        
-    }
 }

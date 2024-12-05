@@ -115,7 +115,7 @@ public class EndlessGameManager : MonoBehaviour
 
             // Спавн парашютиста
             Vector3 spawnPosition = new Vector3(
-                Random.Range(-2.5f, 2.5f), // Рандомное X в пределах экрана
+                Random.Range(-2f, 2f), // Рандомное X в пределах экрана
                 Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0)).y + 1, // Над экраном
                 0
             );
@@ -135,7 +135,7 @@ public class EndlessGameManager : MonoBehaviour
 
             // Спавн препятствия
             Vector3 spawnPosition = new Vector3(
-                Random.Range(-2.5f, 2.5f), // Рандомное X в пределах экрана
+                Random.Range(-2f, 2f), // Рандомное X в пределах экрана
                 Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0)).y + 1, // Над экраном
                 0
             );
@@ -152,7 +152,7 @@ public class EndlessGameManager : MonoBehaviour
 
             // Спавн обычного препятствия
             Vector3 spawnPosition = new Vector3(
-                Random.Range(-2.5f, 2.5f), // Рандомное X в пределах экрана
+                Random.Range(-2f, 2f), // Рандомное X в пределах экрана
                 Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0)).y + 1, // Над экраном
                 0
             );

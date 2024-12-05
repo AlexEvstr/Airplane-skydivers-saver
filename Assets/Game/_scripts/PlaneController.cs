@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class PlaneController : MonoBehaviour
 {
-    public float speed = 5f;                 // Скорость движения самолета
-    public float swipeSensitivity = 1f;     // Чувствительность свайпов
-    public float accelerometerSensitivity = 2f; // Чувствительность акселерометра
+    private float speed = 5f;                 // Скорость движения самолета
+    private float swipeSensitivity = 0.5f;     // Чувствительность свайпов
+    private float accelerometerSensitivity = 2f; // Чувствительность акселерометра
 
     private int controlType;                // Тип управления (0 = акселерометр, 1 = свайпы)
     private Vector3 startTouchPosition;     // Начальная позиция касания
