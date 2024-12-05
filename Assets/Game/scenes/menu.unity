@@ -909,7 +909,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 333859709}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &333859709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1146,6 +1158,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1459048328}
         m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
         m_MethodName: ToggleMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1461,6 +1485,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1459048328}
         m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
         m_MethodName: ToggleMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2111,6 +2147,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &541994381
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,6 +2357,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1459048328}
         m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
         m_MethodName: ToggleSoundEffects
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2521,6 +2581,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1459048329}
         m_TargetAssemblyTypeName: SkillUpgradeShop, Assembly-CSharp
         m_MethodName: UpgradeImmunity
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: UpgradeSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2902,7 +2974,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 622425029}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &622425029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3062,7 +3146,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 637421368}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &673286350
 GameObject:
   m_ObjectHideFlags: 0
@@ -3645,6 +3741,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &810492330
 GameObject:
   m_ObjectHideFlags: 0
@@ -3898,7 +4006,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 832629658}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &832629658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4450,6 +4570,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1010753897
 GameObject:
   m_ObjectHideFlags: 0
@@ -4690,6 +4822,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1459048328}
         m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
         m_MethodName: ChooseAccelerometer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5087,6 +5231,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1084353321
 GameObject:
   m_ObjectHideFlags: 0
@@ -5114,7 +5270,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9c6ed9c2d389849ebb102fb2f2da47de, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -5497,6 +5653,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1122595964
 GameObject:
   m_ObjectHideFlags: 0
@@ -5704,6 +5872,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1153396241
 GameObject:
   m_ObjectHideFlags: 0
@@ -5900,7 +6080,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1168001124}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1172018449
 GameObject:
   m_ObjectHideFlags: 0
@@ -6681,6 +6873,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1340534085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6957,7 +7161,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1367584230}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1367584230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7476,6 +7692,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1459048326}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: BackToGameTypeFromLevel
@@ -7613,6 +7841,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1459048329}
         m_TargetAssemblyTypeName: SkillUpgradeShop, Assembly-CSharp
         m_MethodName: UpgradeControllability
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: UpgradeSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7854,7 +8094,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1443549433}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1443549433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8015,6 +8267,8 @@ MonoBehaviour:
   _swipes: {fileID: 1526088266}
   _save: {fileID: 1631836913}
   _back: {fileID: 1699370501}
+  _click: {fileID: 8300000, guid: 25e9fa66a301142bca1bc880f08eebb4, type: 3}
+  _upgrade: {fileID: 8300000, guid: 54a7cc29f5b474f7583d5ddfcd1df178, type: 3}
 --- !u!114 &1459048329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8121,6 +8375,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1459048328}
         m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
         m_MethodName: ChooseSwipes
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8562,6 +8828,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1631836914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8692,6 +8970,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: endless
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1644587692
@@ -8852,6 +9142,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1459048326}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: CloseFirstEnter
@@ -9062,6 +9364,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1459048326}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: CloseOptions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9341,7 +9655,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1766647062}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1773113399
 GameObject:
   m_ObjectHideFlags: 0
@@ -9875,7 +10201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1884706433}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1884706433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10289,7 +10627,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2081965258}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459048328}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2081965258
 MonoBehaviour:
   m_ObjectHideFlags: 0

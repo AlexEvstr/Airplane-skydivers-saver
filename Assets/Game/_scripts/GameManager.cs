@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverScreen;    // Окно Game Over
     public GameObject campaignCompleteScreen; // Окно завершения кампании
     public GameObject levelCompleteScreen;
+    private GameAudio gameAudio;
 
     public GameObject playerPlane;
 
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        gameAudio = GetComponent<GameAudio>();
         // Загружаем текущий уровень и монеты из PlayerPrefs
         currentLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
         coins = PlayerPrefs.GetInt("Coins", 0);
@@ -60,6 +62,8 @@ public class GameManager : MonoBehaviour
     {
         coins += amount;
         PlayerPrefs.SetInt("Coins", coins);
+        gameAudio.CoinSound();
+
         UpdateUI();
     }
 
@@ -97,6 +101,7 @@ public class GameManager : MonoBehaviour
         }
         PlayerPrefs.Save(); // Убедимся, что данные сохраняются
         levelCompleteScreen.SetActive(true); // Показываем экран завершения уровня
+        gameAudio.WinSound();
     }
 
     public void GameOver()

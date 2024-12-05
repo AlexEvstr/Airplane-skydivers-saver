@@ -20,6 +20,9 @@ public class OptionsController : MonoBehaviour
     [SerializeField] private Button _swipes;
     [SerializeField] private Button _save;
     [SerializeField] private GameObject _back;
+
+    [SerializeField] private AudioClip _click;
+    [SerializeField] private AudioClip _upgrade;
     private int _controlType;
 
     private void Start()
@@ -126,5 +129,15 @@ public class OptionsController : MonoBehaviour
         _back.SetActive(false);
         _controlType = 1;
         PlayerPrefs.SetInt("ControlType", _controlType);
+    }
+
+    public void ClickSound()
+    {
+        soundEffectsSource.PlayOneShot(_click);
+    }
+
+    public void UpgradeSound()
+    {
+        soundEffectsSource.PlayOneShot(_upgrade);
     }
 }

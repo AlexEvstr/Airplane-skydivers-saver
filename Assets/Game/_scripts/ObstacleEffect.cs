@@ -6,6 +6,12 @@ public class ObstacleEffect : MonoBehaviour
     public EffectType effectType;
 
     public float speed = 2f; // Скорость движения препятствия
+    private GameAudio gameAudio;
+
+    private void Start()
+    {
+        gameAudio = FindObjectOfType<GameAudio>();
+    }
 
     private void Update()
     {
@@ -27,6 +33,7 @@ public class ObstacleEffect : MonoBehaviour
 
             if (planeController != null)
             {
+                gameAudio.BonusSound();
                 // Длительность эффектов зависит от улучшений
                 float duration = effectType == EffectType.Lightning
                     ? PlayerPrefs.GetFloat("Immunity", 3.0f)
